@@ -51,6 +51,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.4'
+    compile 'com.android.support:multidex:1.0.0'
 
     testCompile "junit:junit:4.12"
     testCompile "org.robolectric:robolectric:3.1.1"

@@ -9,10 +9,13 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.reactnativenavigation.react.NavigationReactGateway;
 import com.reactnativenavigation.react.ReactGateway;
+import android.support.multidex.MultiDexApplication;
+import android.support.multidex.MultiDex;
+import android.content.Context;
 
 import java.util.List;
 
-public abstract class NavigationApplication extends Application {
+public abstract class NavigationApplication extends MultiDexApplication {
 
     public static NavigationApplication instance;
 
@@ -93,4 +96,9 @@ public abstract class NavigationApplication extends Application {
         reactGateway.getReactEventEmitter().sendEvent(eventId, arguments);
     }
 
+    protected void attachBaseContext(Context base)
+    {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }
