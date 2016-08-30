@@ -241,7 +241,7 @@ function navigatorSetButtons(navigator, navigatorEventID, params) {
 }
 
 function navigatorSetTabBadge(navigator, params) {
-  const badge = params.badge.toString();
+  const badge = (params.badge || '').toString();
   if (params.tabIndex >= 0) {
     newPlatformSpecific.setBottomTabBadgeByIndex(params.tabIndex, badge);
   } else {
